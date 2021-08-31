@@ -1,0 +1,61 @@
+*{margin: 0;padding: 0;}
+.custom-select-container,.custom-select-value,.custom-select-options,.custom-select-option{
+    box-sizing: border-box;
+}
+.custom-select-container{
+    display: inline-block;
+    position: relative;
+
+}
+.custom-select-value{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    border: 1px solid black;
+    padding: .25rem .5rem;
+    cursor: pointer;
+
+    /* user cant select the text inside of select */
+    user-select: none;
+}
+.custom-select-value::after{
+    content:"";
+    display: inline-block;
+    border: 4px solid transparent;
+    border-top-color: black;
+    margin-left: 5px;
+    margin-top:3px ;
+}
+.custom-select-container:focus > .custom-select-value{
+    border-width:2px ;
+    outline: none;
+}
+
+.custom-select-options{
+    display: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border: 2px solid black;
+    border-top: none;
+    max-height: 100px;
+    overflow-y:auto ;
+}
+.custom-select-options.show{
+    display: block;
+}
+
+.custom-select-option{
+    padding:.25rem .5rem;
+    cursor: pointer;
+}
+.custom-select-option:hover{
+    background-color: rgb(151, 198, 214) ;
+}
+.custom-select-option.selected{
+    background-color: rgb(42, 152, 189) ;
+}
+
+
